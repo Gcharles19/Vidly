@@ -168,19 +168,43 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106121439592_AddedCustomerAndMovieClasses.cs" />
+    <Compile Include="Migrations\202106121439592_AddedCustomerAndMovieClasses.Designer.cs">
+      <DependentUpon>202106121439592_AddedCustomerAndMovieClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106121455011_addMembershipType.cs" />
+    <Compile Include="Migrations\202106121455011_addMembershipType.Designer.cs">
+      <DependentUpon>202106121455011_addMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106121457289_addMembershipTypes.cs" />
+    <Compile Include="Migrations\202106121457289_addMembershipTypes.Designer.cs">
+      <DependentUpon>202106121457289_addMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106121458502_populateMembershipTypes.cs" />
+    <Compile Include="Migrations\202106121458502_populateMembershipTypes.Designer.cs">
+      <DependentUpon>202106121458502_populateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106121510224_editedCustomerandMembershipTables.cs" />
+    <Compile Include="Migrations\202106121510224_editedCustomerandMembershipTables.Designer.cs">
+      <DependentUpon>202106121510224_editedCustomerandMembershipTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CustomerVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\assets\css\bootstrap-theme.min.css" />
@@ -282,6 +306,7 @@
     <Content Include="Views\Movies\Random.cshtml" />
     <Content Include="Views\Shared\_Brilliant.cshtml" />
     <Content Include="Views\Shared\_SideBar.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -299,6 +324,23 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106121439592_AddedCustomerAndMovieClasses.resx">
+      <DependentUpon>202106121439592_AddedCustomerAndMovieClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106121455011_addMembershipType.resx">
+      <DependentUpon>202106121455011_addMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106121457289_addMembershipTypes.resx">
+      <DependentUpon>202106121457289_addMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106121458502_populateMembershipTypes.resx">
+      <DependentUpon>202106121458502_populateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106121510224_editedCustomerandMembershipTables.resx">
+      <DependentUpon>202106121510224_editedCustomerandMembershipTables.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

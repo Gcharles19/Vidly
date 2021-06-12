@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!--
 Template Name: BRILLIANT Bootstrap Admin Template
 Version: 4.5.6
@@ -25,11 +24,13 @@ Website: http://www.webthemez.com/
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="~/Content/assets/js/Lightweight-Chart/cssCharts.css">
+    <!-- TABLE STYLES-->
+    <link href="~/Content/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 </head>
 
 <body>
     <div id="wrapper">
-        <nav class="navbar navbar-default top-navbar" role="navigation">
+        <nav class="navbar navbar-default top-navbar navbar-fixed-top" role="navigation">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -262,7 +263,7 @@ Website: http://www.webthemez.com/
         <!-- /. NAV SIDE  -->
 
         <div id="page-wrapper">
-            <div class="header">
+            @*<div class="header">
                 <h1 class="page-header">
                     Dashboard <small>Welcome John Doe</small>
                 </h1>
@@ -272,10 +273,23 @@ Website: http://www.webthemez.com/
                     <li class="active">Data</li>
                 </ol>
 
-            </div>
+            </div>*@
             <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Advanced Tables -->
+                        <div class="panel panel-primary">
+                            @*<div class="panel-heading">
+                                    Advanced Tables
+                                </div>*@
+                            <div class="panel-body">
 
-                @RenderBody()
+                                @RenderBody()
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
                 <hr />
                 <footer class="navbar-fixed-bottom text-right">
@@ -296,23 +310,16 @@ Website: http://www.webthemez.com/
 
     <!-- Metis Menu Js -->
     <script src="~/Content/assets/js/jquery.metisMenu.js"></script>
-    <!-- Morris Chart Js -->
-    <script src="~/Content/assets/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="~/Content/assets/js/morris/morris.js"></script>
 
-
-    <script src="~/Content/assets/js/easypiechart.js"></script>
-    <script src="~/Content/assets/js/easypiechart-data.js"></script>
-
-    <script src="~/Content/assets/js/Lightweight-Chart/jquery.chart.js"></script>
-
+    <script src="~/Content/assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="~/Content/assets/js/dataTables/dataTables.bootstrap.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTables-example').dataTable();
+        });
+    </script>
     <!-- Custom Js -->
     <script src="~/Content/assets/js/custom-scripts.js"></script>
-
-
-    <!-- Chart Js -->
-    <script type="text/javascript" src="~/Content/assets/js/Chart.min.js"></script>
-    <script type="text/javascript" src="~/Content/assets/js/chartjs.js"></script>
 
 </body>
 

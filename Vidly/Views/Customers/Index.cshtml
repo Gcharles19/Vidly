@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Vidly.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Brilliant.cshtml";
+}
+
+<div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tellphone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsSubscribedToNewsLetter)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MembershipTypeID)
+            </th>
+            <th>Discount Rate</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tellphone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatusID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsSubscribedToNewsLetter)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MembershipTypeID)
+        </td>
+        <td>
+            @item.MembershipType.DiscountRate%
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+        </td>
+    </tr>
+        }
+
+    </table>
+</div>
